@@ -34,7 +34,6 @@ namespace RestApi.Controllers
             {
                 throw new KeyNotFoundException();
             }
-            _dataService.TablewareItems.Remove(tablewareItem);
 
             return tablewareItem;
         }
