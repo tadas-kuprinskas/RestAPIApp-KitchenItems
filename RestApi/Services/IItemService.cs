@@ -13,6 +13,6 @@ namespace RestApi.Services
         public T GetById(int id);
         public void DeleteById(int id);
         public void Create(T t);
-        public void Update(T t);
+        public void Update(int id, T t);
     }
 }

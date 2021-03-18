@@ -43,15 +43,15 @@ namespace RestApi.Services
             return kitchenItem;
         }
 
-        public void Update(T t)
+        public void Update(int id, T t)
         {
-            var kitchenItemToReplace = Items.FirstOrDefault(i => i.Id == t.Id);
+            var kitchenItemToReplace = Items.FirstOrDefault(i => i.Id == id);
 
             if (kitchenItemToReplace == null)
             {
                 throw new KeyNotFoundException();
             }
-            Items[t.Id] = t;
+            kitchenItemToReplace.Id = t.Id;
         }
     }
 

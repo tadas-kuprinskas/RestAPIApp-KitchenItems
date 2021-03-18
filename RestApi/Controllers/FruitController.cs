@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RestApi.Models;
+using RestApi.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace RestApi.Controllers
 {
-    public class FruitController : Controller
+    public class FruitController : BaseItemController<Fruit>
     {
-        public IActionResult Index()
+        public FruitController(IItemService<Fruit> itemService) : base(itemService)
         {
-            return View();
         }
     }
 }

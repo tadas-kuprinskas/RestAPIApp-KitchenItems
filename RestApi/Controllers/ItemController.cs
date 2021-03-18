@@ -10,11 +10,11 @@ namespace RestApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ItemController<T> : Controller where T : Item
+    public class BaseItemController<T> : Controller where T : Item
     {
         private readonly IItemService<T> _itemService;
 
-        public ItemController(IItemService<T> itemService)
+        public BaseItemController(IItemService<T> itemService)
         {
             _itemService = itemService;
         }
@@ -44,9 +44,9 @@ namespace RestApi.Controllers
         }
 
         [HttpPut]
-        public void Update(T t)
+        public void Update(int id, T t)
         {
-            _itemService.Update(t);
+            _itemService.Update(id, t);
         }
 
     }
