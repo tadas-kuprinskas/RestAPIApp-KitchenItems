@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RestApi.Data;
+using RestApi.Interfaces;
 using RestApi.Models;
 using RestApi.Services;
 using System;
